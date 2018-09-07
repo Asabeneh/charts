@@ -18,23 +18,24 @@
         }
         .chart-wrapper div{
             height:40px;
-            border:1px solid lightgreen;
+            border:1px solid rgba(0, 10, 50,0.25);
             margin-bottom:3px;
             line-height: 40px;
             padding-right: 10px;
+            font-weight: bolder;
+            color:rgba(255,230,255,1.0);
 
         }
         span {
             float:right;
         }
-        .buttons{
+        .buttons {
             margin: auto;
             text-align:center;
             padding:5px;
             
         }
         button {
-            /* display: inline-block; */
             width:80px;
             height:30px;
             background: lightgoldenrodyellow;
@@ -43,7 +44,7 @@
         }
         button:focus{
             outline:none;
-            border:2px solid rgb(180, 255, 0);
+            border:1px solid rgba(0, 10, 50,0.35);
         }
    
     </style>
@@ -56,7 +57,7 @@
                 <button id ="add-pie">Pie Chart</button>
         </div>
           
-            <div class="chart-wrapper"></div>
+        <div class="chart-wrapper"></div>
 
     </main>
     
@@ -76,33 +77,34 @@
             span.textContent = number;
             div.appendChild(span)
             div.style.width = (number/500)*100 +'%';
-            div.style.backgroundColor = `rgba(180,255,0,${number/500})`;
+            div.style.backgroundColor = `rgba(0,10,50,${number/500})`;
             chartWrapper.appendChild(div)
         });
-        }
+        };
+
         const createHistograph = () => {
             let div, span;
             data.forEach((number) => {
             div = document.createElement('div');
             span = document.createElement('span');
             span.textContent = number;
-            div.appendChild(span)
-            div.style.width = "40px"
+            div.appendChild(span);
+            div.style.minWidth = "5%"
             div.style.height= number +'px';
             div.style.display = "inline-block";
             div.style.marginLeft = "3px"
-            div.style.backgroundColor = `rgba(180,255,0,${number/500})`;
+            div.style.backgroundColor = `rgba(0,10,50,${number/500})`;
             chartWrapper.appendChild(div)
         })
             
-        }
+        };
 
-        addChart.addEventListener('click', function(){
+        addChart.addEventListener('click', () => {
             chartWrapper.innerHTML = '';
             createBarChart();
         });
 
-           addGraph.addEventListener('click', function(){
+           addGraph.addEventListener('click', () => {
             chartWrapper.innerHTML = '';
             createHistograph();
         });
@@ -111,7 +113,7 @@
             return ;;
         };
 
-        addPie.addEventListener('click', function(){
+        addPie.addEventListener('click', () => {
             chartWrapper.innerHTML = '';
             createPieChart();
         });
