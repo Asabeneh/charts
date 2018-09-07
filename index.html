@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin:0;
+        }
+        .chart-wrapper {
+            width:80%;
+            height:100%;
+            background: lightgoldenrodyellow;
+            margin:auto;
+        }
+        .chart-wrapper div{
+            height:40px;
+            border:1px solid lightgreen;
+            margin-bottom:3px;
+            line-height: 40px;
+            padding-right: 10px;
+
+        }
+        span {
+            float:right;
+        }
+        .buttons{
+            margin: auto;
+            text-align:center;
+            padding:5px;
+            
+        }
+        button {
+            /* display: inline-block; */
+            width:80px;
+            height:30px;
+            background: lightgoldenrodyellow;
+            border:none;
+            outline:none;
+        }
+        button:focus{
+            outline:none;
+            border:2px solid rgb(180, 255, 0);
+        }
+   
+    </style>
+</head>
+<body>
+    <main>
+        <div class="buttons">
+                <button id ="add-chart">Bar Chart</button>
+                <button id ="add-graph">Histograph</button>
+                <button id ="add-pie">Pie Chart</button>
+        </div>
+          
+            <div class="chart-wrapper"></div>
+
+    </main>
+    
+    <script>
+        const data = [100,150,250,300,380,400,430,460,500];
+        const chartWrapper = document.querySelector('.chart-wrapper');
+
+        const addChart = document.querySelector('#add-chart');
+        const addGraph = document.querySelector('#add-graph');
+        const addPie = document.querySelector('#add-pie');
+
+        const createBarChart = () => {
+            let div, span;
+            data.forEach((number) => {
+            div = document.createElement('div');
+            span = document.createElement('span');
+            span.textContent = number;
+            div.appendChild(span)
+            div.style.width = (number/500)*100 +'%';
+            div.style.backgroundColor = `rgba(180,255,0,${number/500})`;
+            chartWrapper.appendChild(div)
+        });
+        }
+        const createHistograph = () => {
+            let div, span;
+            data.forEach((number) => {
+            div = document.createElement('div');
+            span = document.createElement('span');
+            span.textContent = number;
+            div.appendChild(span)
+            div.style.width = "40px"
+            div.style.height= number +'px';
+            div.style.display = "inline-block";
+            div.style.marginLeft = "3px"
+            div.style.backgroundColor = `rgba(180,255,0,${number/500})`;
+            chartWrapper.appendChild(div)
+        })
+            
+        }
+
+        addChart.addEventListener('click', function(){
+            chartWrapper.innerHTML = '';
+            createBarChart();
+        });
+
+           addGraph.addEventListener('click', function(){
+            chartWrapper.innerHTML = '';
+            createHistograph();
+        });
+
+        const createPieChart = () => {
+            return ;;
+        };
+
+        addPie.addEventListener('click', function(){
+            chartWrapper.innerHTML = '';
+            createPieChart();
+        });
+
+    createBarChart();
+
+
+    </script>
+</body>
+</html>
