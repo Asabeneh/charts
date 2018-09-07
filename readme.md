@@ -1,2 +1,2 @@
 # HTM CSS and JavaScript Chart
-## [Chart Demo](https://asabeneh.github.io/DOM-Bar-Chart/) 
+## [Chart Demo](https://asabeneh.github.io/charts/) 
