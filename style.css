@@ -1,0 +1,38 @@
+
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+.chart-wrapper {
+    width:80%;
+    height:100%;
+    background: lightgoldenrodyellow;
+    margin:auto;
+}
+.chart-wrapper div{
+    height:40px;
+    border:1px solid rgba(0, 10, 50,0.25);
+    margin-bottom:3px;
+    line-height: 40px;
+    font-weight: bolder;
+    color:rgba(255,230,255,1.0);
+
+}
+.buttons {
+    margin: auto;
+    text-align:center;
+    padding:5px;
+    
+}
+button {
+    width:80px;
+    height:30px;
+    background: lightgoldenrodyellow;
+    border:none;
+    outline:none;
+}
+button:focus{
+    outline:none;
+    border:1px solid rgba(0, 10, 50,0.35);
+}
+
