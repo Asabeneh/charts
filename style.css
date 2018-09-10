@@ -30,10 +30,12 @@
     text-align : center
 }
 .histograph:hover {
+    -webkit-transform: scaleX(1.075);
     transform: scaleX(1.075);
 
 }
 .bar-graph:hover {
+    -webkit-transform: scaleY(1.075);
     transform: scaleY(1.075);
 }
 
