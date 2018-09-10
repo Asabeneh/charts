@@ -1,12 +1,13 @@
 const data = [100,150,250,300,380,400,430,460,500];
 const chartWrapper = document.querySelector('.chart-wrapper');
 
-const addChart = document.querySelector('#add-chart');
-const addGraph = document.querySelector('#add-graph');
-const addPie = document.querySelector('#add-pie');
-const addLineGraph = document.querySelector('#add-line');
+const addBarGraph = document.querySelector('#add-bar-graph');
+const addHistoGraph = document.querySelector('#add-histograph');
+const addPieChart = document.querySelector('#add-pie-chart');
+const addLineGraph = document.querySelector('#add-line-graph');
+const addCircleGraph = document.querySelector('#add-circle-graph');
 
-const createBarChart = () => {
+const createBarGraph = () => {
     let div;
     data.forEach((number) => {
     div = document.createElement('div');
@@ -36,8 +37,7 @@ const createHistograph = () => {
 })
     
 };
-
-    const createLineGraph = () => {
+const createCircleGraph = () => {
     let div;
     data.forEach((number) => {
     div = document.createElement('div');
@@ -56,14 +56,32 @@ const createHistograph = () => {
 });
 }
 
+const createLineGraph = () => {
+    let div;
+    data.forEach((number) => {
+    div = document.createElement('div');
+    div.textContent = number;
+    div.style.height='20px';
+    div.style.width= '20px';
+    div.style.display = "inline-block";
+    div.style.marginLeft = "10px"
+    div.style.position ="relative";
+    div.style.textAlign = "center";
+    div.style.borderRadius ="10px"
+    div.style.top = 500 - number + 'px';
+    div.style.backgroundColor = `rgba(0,10,50,${number/500})`;
+    chartWrapper.appendChild(div)
+})
+    
+}
 
 
-addChart.addEventListener('click', () => {
+addBarGraph.addEventListener('click', () => {
     chartWrapper.innerHTML = '';
-    createBarChart();
+    createBarGraph();
 });
 
-   addGraph.addEventListener('click', () => {
+addHistoGraph.addEventListener('click', () => {
     chartWrapper.innerHTML = '';
     createHistograph();
 });
@@ -72,13 +90,17 @@ const createPieChart = () => {
     return ;;
 };
 
-addPie.addEventListener('click', () => {
+addPieChart.addEventListener('click', () => {
     chartWrapper.innerHTML = '';
     createPieChart();
 });
+addCircleGraph.addEventListener('click', () => {
+    chartWrapper.innerHTML = '';
+    createCircleGraph()
+})
 addLineGraph.addEventListener('click', () => {
     chartWrapper.innerHTML = '';
-    createLineGraph()
+    createLineGraph();
 })
 
-createBarChart();
+createBarGraph();
