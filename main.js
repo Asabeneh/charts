@@ -12,9 +12,8 @@ const createBarGraph = () => {
     data.forEach((number) => {
     div = document.createElement('div');
     div.textContent = number;
+    div.classList.add('bar','bar-graph');
     div.style.width = (number/500)*100 +'%';
-    div.style.textAlign = "right";
-    div.style.paddingRight = "10px"
     div.style.backgroundColor = `rgba(0,10,50,${number/500})`;
     chartWrapper.appendChild(div)
 });
@@ -25,12 +24,8 @@ const createHistograph = () => {
     data.forEach((number) => {
     div = document.createElement('div');
     div.textContent = number;
-    div.style.minWidth = "5%"
+    div.classList.add('bar','histograph');
     div.style.height= number +'px';
-    div.style.display = "inline-block";
-    div.style.marginLeft = "3px"
-    div.style.position ="relative";
-    div.style.textAlign = "center";
     div.style.top = 500 - number + 'px';
     div.style.backgroundColor = `rgba(0,10,50,${number/500})`;
     chartWrapper.appendChild(div)

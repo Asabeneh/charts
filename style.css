@@ -18,6 +18,25 @@
     color:rgba(255,230,255,1.0);
 
 }
+.bar-graph {
+    text-align: right;
+    padding-right :10px;
+}
+.histograph {
+    width: 40px;
+    display: inline-block;
+    margin-left: 3px;
+    position: relative;
+    text-align : center
+}
+.histograph:hover {
+    transform: scaleX(1.075);
+
+}
+.bar-graph:hover {
+    transform: scaleY(1.075);
+}
+
 .buttons {
     margin: auto;
     text-align:center;
