@@ -1,28 +1,27 @@
-const data = [100, 150, 250, 300, 380, 400, 430, 460, 500];
-const chartWrapper = document.querySelector(".chart-wrapper");
-const addBarGraph = document.querySelector("#add-bar-graph");
-const addHistograph = document.querySelector("#add-histograph");
-const addPieChart = document.querySelector("#add-pie-chart");
-const addLineGraph = document.querySelector("#add-line-graph");
-const addCircleGraph = document.querySelector("#add-circle-graph");
-
-const createBarGraph = () => {
+const charts = {
+  data: [100, 150, 250, 300, 380, 400, 430, 460, 500],
+  chartWrapper: document.querySelector(".chart-wrapper"),
+  addBarGraph:document.querySelector("#add-bar-graph"),
+  addHistograph: document.querySelector("#add-histograph"),
+  addPieChart: document.querySelector("#add-pie-chart"),
+  addLineGraph: document.querySelector("#add-line-graph"),
+  addCircleGraph: document.querySelector("#add-circle-graph"),
+  createBarGraph(){
+    let div;
+    this.data.forEach(number => {
+      div = document.createElement("div");
+      div.textContent = number;
+      div.classList.add("bar", "bar-graph");
+      Object.assign(div.style, {
+        width: (number / 500) * 100 + "%",
+        backgroundColor: `rgba(0,10,30,${number / 500})`
+      })
+      this.chartWrapper.appendChild(div);
+    });
+  },
+  createHistograph(){
   let div;
-  data.forEach(number => {
-    div = document.createElement("div");
-    div.textContent = number;
-    div.classList.add("bar", "bar-graph");
-    Object.assign(div.style, {
-      width: (number / 500) * 100 + "%",
-      backgroundColor: `rgba(0,10,30,${number / 500})`
-    })
-    chartWrapper.appendChild(div);
-  });
-};
-
-const createHistograph = () => {
-  let div;
-  data.forEach(number => {
+  this.data.forEach(number => {
     div = document.createElement("div");
     div.textContent = number;
     div.classList.add("bar", "histograph");
@@ -32,12 +31,12 @@ const createHistograph = () => {
       backgroundColor: `rgba(0,10,30,${number / 500})`
     })
 
-    chartWrapper.appendChild(div);
+    this.chartWrapper.appendChild(div);
   });
-};
-const createCircleGraph = () => {
+},
+createCircleGraph(){
   let div;
-  data.forEach(number => {
+  this.data.forEach(number => {
     div = document.createElement("div");
     div.textContent = number;
     Object.assign(div.style, {
@@ -52,59 +51,63 @@ const createCircleGraph = () => {
       backgroundColor: `rgba(0,10,30,${number / 500})`
 
     })
-    chartWrapper.appendChild(div);
+    this.chartWrapper.appendChild(div);
   });
-};
+}
 
-addBarGraph.addEventListener("click", () => {
-  chartWrapper.innerHTML = "";
-  addHistograph.classList.remove('active');
-  addCircleGraph.classList.remove('active');
-  addBarGraph.className = 'active';
-  createBarGraph();
+}
+
+charts.createBarGraph();
+
+
+charts.addBarGraph.addEventListener("click", () => {
+  charts.chartWrapper.innerHTML = "";
+  charts.addHistograph.classList.remove('active');
+  charts.addCircleGraph.classList.remove('active');
+  charts.addBarGraph.className = 'active';
+  charts.createBarGraph();
 
 });
 
-addHistograph.addEventListener("click", () => {
-  chartWrapper.innerHTML = "";
+charts.addHistograph.addEventListener("click", () => {
+  charts.chartWrapper.innerHTML = "";
   if (window.innerWidth < 525) {
-    addHistograph.classList.remove('active');
-    addCircleGraph.classList.remove('active');
-    addBarGraph.className = 'active'
-    createBarGraph();
+    charts.addHistograph.classList.remove('active');
+    charts.addCircleGraph.classList.remove('active');
+    charts.addBarGraph.className = 'active'
+    charts.createBarGraph();
 
   }
   else {
-    addBarGraph.classList.remove('active');
-    addCircleGraph.classList.remove('active');
-    addHistograph.className = 'active'
-    createHistograph();
+    charts.addBarGraph.classList.remove('active');
+    charts.addCircleGraph.classList.remove('active');
+    charts.addHistograph.className = 'active'
+    charts.createHistograph();
   }
 
 });
 
 
-addCircleGraph.addEventListener("click", () => {
-  chartWrapper.innerHTML = "";
-  addHistograph.classList.remove('active')
-  addBarGraph.classList.remove('active');
-  addCircleGraph.className = 'active'
-  createCircleGraph();
+charts.addCircleGraph.addEventListener("click", () => {
+  charts.chartWrapper.innerHTML = "";
+  charts.addHistograph.classList.remove('active')
+  charts.addBarGraph.classList.remove('active');
+  charts.addCircleGraph.className = 'active'
+  charts.createCircleGraph();
 });
 
-createBarGraph();
 
 window.addEventListener('resize', (e) => {
-  chartWrapper.innerHTML = "";
+  charts.chartWrapper.innerHTML = "";
   if (e.currentTarget.innerWidth <= 525) {
-    addHistograph.classList.remove('active')
-    addBarGraph.className = 'active'
-    createBarGraph();
+    charts.addHistograph.classList.remove('active')
+    charts.addBarGraph.className = 'active'
+    charts.createBarGraph();
 
   }
   else {
-    addBarGraph.classList.remove('active');
-    addHistograph.className = 'active'
-    createHistograph();
+    charts.addBarGraph.classList.remove('active');
+    charts.addHistograph.className = 'active'
+    charts.createHistograph();
   }
 });
