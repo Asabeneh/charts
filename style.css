@@ -1,19 +1,21 @@
-
-* {
+*,*::before,*::before{
     box-sizing: border-box;
     margin:0;
+}
+body {
+    background:#555;
 }
 .chart-wrapper {
     width:80%;
     height:100%;
-    background: lightgoldenrodyellow;
+    background: rgb(248, 229, 177);
     margin:auto;
 }
 .chart-wrapper div{
     height:40px;
-    border:1px solid rgba(0, 10, 50,0.25);
+    border:1px solid rgba(102, 4, 69, 0.1);
     margin-bottom:3px;
-    line-height: 40px;
+    line-height: 38px;
     font-weight: bolder;
     color:rgba(255,230,255,1.0);
 
@@ -46,14 +48,20 @@
     
 }
 button {
-    width:80px;
-    height:30px;
-    background: lightgoldenrodyellow;
+    width:120px;
+    height:40px;
     border:none;
     outline:none;
+    background: rgb(248, 229, 177);
+    font-size:18px;
+    font-weight: bolder;
 }
 button:focus{
-    outline:none;
-    border:1px solid rgba(0, 10, 50,0.35);
+    outline:none; 
+}
+.active {
+    border-bottom:3px solid orangered;
+    background: orange;
+    color:white;
 }
 
