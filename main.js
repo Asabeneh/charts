@@ -1,4 +1,4 @@
-const data = [100, 150, 250, 300, 380, 400, 430, 460, 500];
+const data = [100, 150, 250, 300, 380, 400, 430, 460,480, 500];
 const chartWrapper = document.querySelector(".chart-wrapper");
 const addBarGraph = document.querySelector("#add-bar-graph");
 const addHistograph = document.querySelector("#add-histograph");
