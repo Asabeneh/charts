@@ -12,7 +12,7 @@ const createBarGraph = data => {
     div.classList.add("bar", "bar-graph");
     Object.assign(div.style, {
       width: (number / 500) * 100 + "%",
-      backgroundColor: `rgba(0,10,30,${number / 500})`
+      backgroundColor: `rgba(233, 114, 77,${number / 500})`
     });
     chartWrapper.appendChild(div);
   });
@@ -28,7 +28,7 @@ const createHistograph = data => {
     Object.assign(div.style, {
       height: number + "px",
       top: 500 - number + "px",
-      backgroundColor: `rgba(0,10,30,${number / 500})`
+      backgroundColor: `rgba(233, 114, 77,${number / 500})`
     });
 
     chartWrapper.appendChild(div);
@@ -48,7 +48,7 @@ const createCircleGraph = data => {
       display: "inline-block",
       marginLeft: "3px",
       fontSize: number / 20 + "px",
-      backgroundColor: `rgba(0,10,30,${number / 500})`
+      backgroundColor: `rgba(233, 114, 77,${number / 500})`
     });
     chartWrapper.appendChild(div);
   });

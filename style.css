@@ -4,22 +4,21 @@
   box-sizing: border-box;
   margin: 0;
 }
-body {
-  background: #555;
-}
+
 .chart-wrapper {
   width: 80%;
   height: 100%;
-  background: rgb(248, 229, 177);
   margin: auto;
+  padding:10px;
+  box-shadow: 0px 0px 6px 1px rgb(235, 230, 230);
 }
 .chart-wrapper div {
   height: 40px;
   border: 1px solid rgba(102, 4, 69, 0.1);
-  margin-bottom: 3px;
+  margin-bottom: 5px;
   line-height: 38px;
-  font-weight: bolder;
-  color: rgba(255, 230, 255, 1);
+  font-weight: 400;
+  color:#333;
 }
 .bar-graph {
   text-align: right;
@@ -49,18 +48,19 @@ body {
 button {
   width: 120px;
   height: 40px;
-  border: 1px solid #888;
+  border:1px solid rgb(248, 229, 177);
   outline: none;
   background: rgb(248, 229, 177);
-  font-size: 18px;
-  font-weight: bolder;
+  font-weight: 400;
+  margin:0 10px 0 10px;
+  border-radius: 2px;
 
 }
 button:focus {
   outline: none;
 }
 .active {
-  border-bottom: 3px solid orangered;
+  border-bottom: 3px solid rgb(255, 69, 0);
   background: orange;
   color: white;
 }
