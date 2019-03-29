@@ -19,6 +19,8 @@
   line-height: 38px;
   font-weight: 400;
   color:#333;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .bar-graph {
   text-align: right;
@@ -30,6 +32,8 @@
   margin-left: 3px;
   position: relative;
   text-align: center;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .histograph:hover {
   -webkit-transform: scaleX(1.075);
@@ -48,12 +52,14 @@
 button {
   width: 120px;
   height: 40px;
-  border:1px solid rgb(248, 229, 177);
+  border:1px solid rgb(255, 206, 0);
   outline: none;
-  background: rgb(248, 229, 177);
-  font-weight: 400;
+  background: rgb(255, 206, 0);
+  font-weight: 100;
   margin:0 10px 0 10px;
   border-radius: 2px;
+  transition: 0.3s ease all;
+  font-size: 18px;
 
 }
 button:focus {
