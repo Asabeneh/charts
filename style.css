@@ -9,45 +9,60 @@
 
 /*=== MAIN ===*/
 main {
+
   margin: auto;
   text-align: center;
+
 }
+
 .chart-wrapper {
-  box-shadow: 0px 0px 6px 1px rgb(235, 230, 230);
+  min-height: 25vh;
+  box-shadow: 1px 1px 20px 10px rgb(7, 7, 7);
+  box-shadow: 1px 1px 20px 10px rgb(235, 230, 230);
+  box-shadow: 1px 1px 8px 5px rgba(0, 0, 0, 0.3);
   height: 100%;
-  padding: 5px;
+  padding: 15px;
   margin: auto;
-  width: 80%;
+  width: 75%;
+  line-height: 35vh;
 }
+
 .chart-wrapper div {
-  border: 1px solid rgba(102, 4, 69, 0.1);
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   color: #333;
-  font-size: 18px;
-  font-weight: 400;
-
-  height: 40px;
-  line-height: 38px;
+  font-size: 20px;
+  height: 50px;
+  line-height: 48px;
   margin-bottom: 5px;
+
 }
+
 .bar-graph {
   padding-right: 10px;
   text-align: right;
+  font-family: 'Lato';
+  font-weight: 300;
+
 }
+
 .histograph {
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px;
   display: inline-block;
-  margin-left: 3px;
+  margin-left: 5px;
   position: relative;
   text-align: center;
-  width: 40px;
+  width: 50px;
+  font-family: 'Lato';
+  font-weight: 300;
 }
+
 .histograph:hover {
   transform: scaleX(1.075);
   -webkit-transform: scaleX(1.075);
 }
+
 .bar-graph:hover {
   transform: scaleY(1.075);
   -webkit-transform: scaleY(1.075);
@@ -55,24 +70,29 @@ main {
 
 .buttons {
   padding: 5px;
-  margin: auto;
+  margin: 10px auto;
   text-align: center;
 }
+
 button {
-  background: #ffa500;
+
+  background: rgb(255, 165, 0);
   border: 1px solid #ffa500;
   border-radius: 2px;
   font-size: 18px;
-  font-weight: 100;
   height: 40px;
   margin: 0 1px 0 1px;
   outline: none;
-  transition: 0.3s ease all;
+  transition: 0.5s ease all;
   width: 120px;
+  font-family: 'Lato';
+  font-weight: 400;
 }
+
 button:focus {
   outline: none;
 }
+
 .active {
   background: orange;
   border-bottom: 3px solid rgb(255, 69, 0);
